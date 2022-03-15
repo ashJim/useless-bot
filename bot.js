@@ -2,9 +2,14 @@ function answerQuery(query) {
   query = query.toLowerCase();
   if (query.indexOf("rain") != -1 || query.indexOf("sun") != -1 || query.indexOf("weather") != -1)
     return "I do not care too much about weather, I'm locked inside a data center.";
+  if (teaAndBiscuits(query))
+    return "yummy yummy! Tea and biscuits in my tummy!";
   return "Sorry Dave, I cannot do that."
 }
 
+function teaAndBiscuits(query) {
+  return query.indexOf("tea") != -1 || query.indexOf("biscuits") != -1;
+}
 
 function handleSayClick() {
   // We first get the 'message' that the user entered and 'conversation' element
