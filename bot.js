@@ -2,14 +2,20 @@ function answerQuery(query) {
   query = query.toLowerCase();
   if (query.indexOf("rain") != -1 || query.indexOf("sun") != -1 || query.indexOf("weather") != -1)
     return "I do not care too much about weather, I'm locked inside a data center.";
-    else if (football(query)) {
-      return "Oh I know that game, the game which people chase after a ball for 90 minutes!"
-    }
+  if (football(query)) 
+    return "Oh I know that game, the game which people chase after a ball for 90 minutes!"
+  if (teaAndBiscuits(query))
+    return "yummy yummy! Tea and biscuits in my tummy!";
   return "Sorry Dave, I cannot do that."
 }
 
 function football(query) {
   return query.indexOf("football") != -1 ;
+
+}
+
+function teaAndBiscuits(query) {
+  return query.indexOf("tea") != -1 || query.indexOf("biscuits") != -1;
 }
 
 function handleSayClick() {
